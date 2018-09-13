@@ -4,6 +4,5 @@ public class GameApp {
 
             Game game   = new Game();
             game.start();
-
     }
 }

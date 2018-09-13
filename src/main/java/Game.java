@@ -1,6 +1,3 @@
-import java.util.Random;
-import java.util.Scanner;
-
 public class Game {
 
     private int randomNumber;
@@ -9,10 +6,10 @@ public class Game {
     public void start() {
 
 do {
-    randomNumber = generateRandomNumber();
+    randomNumber = MathUtil.generateRandomNumber();
 
     do {
-        userNumber = readNumer("Please input your number:");
+        userNumber = MathUtil.readNumer("Please input your number:");
 
         if (userNumber < 0) {
             System.out.println("Digit should be more then 0");
@@ -26,34 +23,8 @@ do {
             System.out.println("Specify less");
         }
         } while (randomNumber != userNumber) ;
-    } while (readInput("Do you want to continue (y)?").equals("y"));
+    } while (MathUtil.readInput("Do you want to continue (y)?").equals("y"));
 
 System.out.println("Buy, buy...");
-}
-
-
-    private int generateRandomNumber(){
-        return new Random().nextInt(51);
+         }
     }
-
-    private int readNumer (String message) {
-
-        int result = 0;
-        boolean isValied = false;
-
-        do {
-            try {
-                result = Integer.valueOf(readInput(message));
-                isValied = true;
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid number");
-            }
-        }  while (!isValied);
-        return result;
-    }
-
-    private String readInput(String message){
-        System.out.println(message);
-        return new Scanner(System.in).nextLine();
-    }
-}
