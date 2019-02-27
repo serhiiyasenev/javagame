@@ -2,7 +2,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MathUtil {
-    public static int generateRandomNumber(){
+    public static int generateRandomNumber()
+    {
         return new Random().nextInt(51);
     }
 
